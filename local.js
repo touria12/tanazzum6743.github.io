@@ -1,6 +1,6 @@
-let t1 = document.getElementById("sidd-form");
+let t1 = document.getElementById("tou-form");
 const t2 = () => {
-  let t3 = localStorage.getItem("sidd-ent");
+  let t3 = localStorage.getItem("tou-ent");
   if (t3) {
     t3 = JSON.parse(t3);
   } else {
@@ -14,13 +14,13 @@ const t5 = () => {
   const t6 = t2();
   const t7 = t6
     .map((entry) => {
-      const namesidd = `<td class='border px-4 py-2'>${entry.name}</td>`;
-      const emailsidd = `<td class='border px-4 py-2'>${entry.email}</td>`;
-      const passwordsidd = `<td class='border px-4 py-2'>${entry.password}</td>`;
-      const dobsidd = `<td class='border px-4 py-2'>${entry.dob}</td>`;
-      const acceptTermssidd = `<td class='border px-4 py-2'>${entry.acceptedTermsAndConditions}</td>`;
-      const rowsidd = `<tr>${namesidd} ${emailsidd} ${passwordsidd} ${dobsidd} ${acceptTermssidd}</tr>`;
-      return rowsidd;
+      const nametou = `<td class='border px-4 py-2'>${entry.name}</td>`;
+      const emailtou = `<td class='border px-4 py-2'>${entry.email}</td>`;
+      const passwordtou = `<td class='border px-4 py-2'>${entry.password}</td>`;
+      const dobtou = `<td class='border px-4 py-2'>${entry.dob}</td>`;
+      const acceptTermstou = `<td class='border px-4 py-2'>${entry.acceptedTermsAndConditions}</td>`;
+      const rowtou = `<tr>${nametou} ${emailtou} ${passwordtou} ${dobtou} ${acceptTermstou}</tr>`;
+      return rowtou;
     })
     .join("\n");
   const table = `<table class="table-auto w-full"><tr>
@@ -30,7 +30,7 @@ const t5 = () => {
     <th class="px-4 py-2">Dob</th>
     <th class="px-4 py-2">Accepted terms?</th>
     </tr>${t7} </table>`;
-  let details = document.getElementById("sidd-ent");
+  let details = document.getElementById("tou-ent");
   details.innerHTML = table;
 };
 const t8 = (event) => {
@@ -49,7 +49,7 @@ const t8 = (event) => {
     acceptedTermsAndConditions,
   };
   t4.push(entry);
-  localStorage.setItem("sidd-ent", JSON.stringify(t4));
+  localStorage.setItem("tou-ent", JSON.stringify(t4));
   t5();
 };
 t1.addEventListener("submit", t8);
