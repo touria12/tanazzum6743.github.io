@@ -56,7 +56,7 @@ t1.addEventListener("submit", t8);
 t5();
 //----------------------------------------------------------DATE VALIDATION-----------------------------------------
 
-function valdatecondition() {
+function ganval2() {
   let element = document.getElementById("dob");
   const dob = document.getElementById("dob").value;
   let tou1 = new Date(dob);
@@ -73,19 +73,5 @@ function valdatecondition() {
     element.reportValidity();
   } else {
     element.setCustomValidity("");
-  }
-}
-
-//=======================================email=========================================
-const t9 = document.getElementById("email");
-
-t9.addEventListener("input", () => validate(t9));
-
-function validate(t10) {
-  if (t10.validity.typeMismatch) {
-    t10.setCustomValidity("Wrong email format");
-    t10.reportValidity();
-  } else {
-    t10.setCustomValidity("");
   }
 }
